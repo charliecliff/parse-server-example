@@ -16,21 +16,15 @@ var api = new ParseServer({
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'popsmakeapp',
   masterKey: process.env.MASTER_KEY || 'popsmokemasterkey',
-  serverURL: process.env.SERVER_URL || 'http://popsmokeapp.herokuapp.com/parse',d
+  serverURL: process.env.SERVER_URL || 'http://popsmokeapp.herokuapp.com/parse',
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
   push: {
-		android: {
-			senderId: '', // The Sender ID of GCM
-			apiKey: '' // The Server API Key of GCM
-		},
 		ios: {
-			pfx: 'certs/Dev_PopSmoke_Push.p12', // the path and filename to the .p12 file you exported earlier. 
-			cert: '', // If not using the .p12 format, the path to the certificate PEM to load from disk
-			bundleId: 'com.nomad.popsmoke', // The bundle identifier associated with your app
-			key: '', // If not using the .p12 format, the path to the private key PEM to load from disk
-			production: false // Specifies which environment to connect to: Production (if true) or Sandbox
+			pfx: 'certs/Dev_PopSmoke_Push.p12', 
+			bundleId: 'com.nomad.popsmoke',
+			production: false
 		}
 	}
 });
